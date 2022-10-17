@@ -39,3 +39,9 @@ tasks.named('bootBuildImage') {
     imageName = 'ghcr.io/teheidoma/zroz:' + project.version
     environment = ['BP_NATIVE_IMAGE': 'true']
 }
+
+tasks.create("printVersionName") {
+    doLast {
+        println(project.version)
+    }
+}
