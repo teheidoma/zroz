@@ -7,7 +7,6 @@ plugins {
 
 group = 'com.teheidoma'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
 
 configurations {
     compileOnly {
@@ -37,5 +36,6 @@ tasks.named('test') {
 
 tasks.named('bootBuildImage') {
     builder = 'paketobuildpacks/builder:tiny'
+    imageName = 'ghcr.io/teheidoma/zroz:' + project.version
     environment = ['BP_NATIVE_IMAGE': 'true']
 }
